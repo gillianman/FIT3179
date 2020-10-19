@@ -12,18 +12,10 @@
 <div id="vis"></div>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/vega/vega/master/docs/examples/bar-chart.vg.json";
+  var spec = "https://github.com/gillianman/-FIT3179/blob/main/visualization.vl.json";
   vegaEmbed('#vis', spec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
 </body>
 </html>
-
-import embed from 'vega-embed';
-
-const spec = {https://github.com/gillianman/-FIT3179/blob/main/visualization.vl.json}
-
-const result = await embed('#vis', spec);
-
-console.log(result.view);
