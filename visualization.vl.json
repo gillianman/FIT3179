@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "Population of adult (18+ years) who were overweight, by local government area in Victoria",
+  "data": {
+    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/homework10/data/Overweight_suburb.csv"
+  },
+  "params": [
+    {
+      "name": "Region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Greater Melbourne",
+          "Southwest Regional",
+          "Central Highlands",
+          "Goulburn Valley",
+          "Northeast Regional",
+          "Gippsland",
+          "Western Regional",
+          "Wimmera",
+          "The Mallee"
+        ],
+        "labels": [
+          "Show All",
+          "Greater Melbourne",
+          "Southwest Regional",
+          "Central Highlands",
+          "Goulburn Valley",
+          "Northeast Regional",
+          "Gippsland",
+          "Western Regional",
+          "Wimmera",
+          "The Mallee"
+        ],
+        "name": "Region Selection"
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Region_selection ==null|| datum.Region == Region_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Female",
+      "type": "quantitative",
+      "title": "Female percentage",
+      "axis": {"tickCount": 6},
+      "scale": {"domain": [10, 80]}
+    },
+    "y": {
+      "field": "Male",
+      "type": "quantitative",
+      "title": "Male percentage",
+      "axis": {"tickCount": 6},
+      "scale": {"domain": [30, 80]}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "color": {"field": "Region", "type": "nominal"},
+        "scale": {
+          "domain": [
+            "Greater Melbourne",
+            "Southwest Regional",
+            "Central Highlands",
+            "Goulburn Valley",
+            "Northeast Regional",
+            "Gippsland",
+            "Western Regional",
+            "Wimmera",
+            "The Mallee"
+          ]
+        }
+      },
+      "opacity": {
+        "condition": {"selection": "region_highlight", "value": 0.6},
+        "value": 0.2
+      },
+      "tooltip": [
+        {"field": "Suburb", "type": "nominal"},
+        {"field": "Female", "type": "quantitative", "format": ","},
+        {"field": "Male", "type": "quantitative", "format": ","}
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Region", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Region'] == 'Monash'||datum['Region']=='Melbourne'||datum['Region']=='Greater Geelong'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Suburb", "type": "nominal"},
+          {"field": "Female", "type": "quantitative", "format": ","},
+          {"field": "Male", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
