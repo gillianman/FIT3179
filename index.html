@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1> first visualisation</h1>
-<div id="bar_chart"></div>
+<div id="bar"></div>
 
 <h1>Second visualisation</h1>
 <div id ='scatter_plot"></div>
@@ -17,7 +17,7 @@
 <script type="text/javascript">
           
   var vis1 = "h8visualization.vl.json";
-  vegaEmbed('#bar_chart', vis1).then(function(result) {
+  vegaEmbed('#bar', vis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
                             
