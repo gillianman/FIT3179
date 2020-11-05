@@ -1,1 +1,48 @@
-c
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {"text": "Victorian Population Health Survey by local government area  in 2014", "color": "white"},
+  "width": 600,
+  "height": 500,
+  "projection": {"type": "azimuthalEqualArea", "rotate": [-133, 28, 0]},
+  "data": {
+    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/victoria_lgatopojson.json",
+    "format": {"type": "topojson", "feature": "victoria_lga"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.vic_lga__3",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/gillianman/FIT3179/Assignment3/health_population.csv"
+        },
+        "key": "Local_government_area",
+        "fields": [
+          "Region",
+          "Obese",
+          "Current_smoker",
+          "High_blood_pressure",
+          "Heart_disease",
+          "Stroke",
+          "Cancer"
+        ]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding":{
+    "color":{
+      "field":"Obese",
+      "type":"quantitative",
+      "scale":{
+        "type": "threshold",
+        "domain":[1,50,100]
+      
+      }
+    },
+    "tooltip":[
+      {"field":"properties.vic_lga__3", "type":"nominal","title":"Country"},
+      {"field":"Region","type":"nominal","title":"Region"}
+    ]},
+  
+  "background": "black"
+}
