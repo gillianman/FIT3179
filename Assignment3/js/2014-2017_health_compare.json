@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": {"step": 50},
+  "height": 400,
+  "title": "Population of adult (18+ years) who were overweight, by local government area in Victoria",
+  "data": {
+    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/data/2014-2017_health_compare.csv"
+  },
+  "transform": [{"calculate": "datum == 2 ? '2014' : '2017'", "as": "year"}],
+  "mark": "bar",
+  "encoding": {
+    "column": {"field": "Status", "type": "ordinal", "spacing": 10},
+    "y": {
+      "aggregate": "sum",
+      "field": "Percentage",
+      "title": "Percentage",
+      "axis": {"grid": false}
+    },
+    "x": {"field": "Year", "axis": {"title": ""}},
+    "color": {"field": "Year", "scale": {"range": ["#675193", "#ca8861"]}}
+  },
+  "config": {}
+}
