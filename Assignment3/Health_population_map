@@ -31,7 +31,7 @@
   "mark": {"type": "geoshape"},
   "encoding":{
     "color":{
-      "field":"Obese",
+      "field":"bese",
       "type":"quantitative",
       "scale":{
         "type": "threshold",
