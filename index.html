@@ -21,7 +21,12 @@
   
   <h3> Anxiety or depression </h3>
   <div id ="bar2"></div>
- 
+  
+ <h3> Proportion of adult population, by time spent sitting on an average week day</h3>
+  <div id ="bar3"></div>
+   
+  <h3>Overweight</h3>
+  <div id ="scatter"></div>
 
            
 <script type="text/javascript">
@@ -38,6 +43,16 @@
   
    var vis3 = "Assignment2/js/Anxiety_depression_lga.vl.json";
   vegaEmbed('#bar2', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   var vis4 = "Assignment2/js/Hours_of_seating.vl.json";
+  vegaEmbed('#bar3', vis4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis5 = "Assignment2/js/overweight_suburb.vl.json";
+  vegaEmbed('#scatter', vis5).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
