@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": {"step": 50},
   "height": 400,
-  "title": "Population of adult (18+ years) who were overweight, by local government area in Victoria",
+  "title": "Change in population of different health status in 2014 and 2017 in Victoria region",
   "data": {
     "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/data/2014-2017_health_compare.csv"
   },
