@@ -8,6 +8,9 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
+  <h2>Name: Gillian Man</h2>
+  <h2>Student number: 28809912</h2>
+  <h2>FIT3179</h2>
 <h1> Victorian Population Health Survey 2017</h1>
   <h2> The Victorian Health Survey is a survey based on a random sample of adults aged 18 years and over. 
     In 2017, the survey was done by approximately 34,000 Victorian citizen across 79 councils in Victoria. </h2>
@@ -22,11 +25,13 @@
   <h3> Anxiety or depression </h3>
   <div id ="bar2"></div>
   
+  <h3>Overweight</h3>
+  <div id ="scatter"></div>
+  
  <h3> Proportion of adult population, by time spent sitting on an average week day</h3>
   <div id ="bar3"></div>
    
-  <h3>Overweight</h3>
-  <div id ="scatter"></div>
+
 
            
 <script type="text/javascript">
@@ -46,15 +51,17 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-   var vis4 = "Assignment2/js/Hours_of_seating.vl.json";
+    var vis4 = "Assignment2/js/overweight_suburb.vl.json";
+  vegaEmbed('#scatter', vis5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   var vis5 = "Assignment2/js/Hours_of_seating.vl.json";
   vegaEmbed('#bar3', vis4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var vis5 = "Assignment2/js/overweight_suburb.vl.json";
-  vegaEmbed('#scatter', vis5).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+
 </script>
 
 </body>
