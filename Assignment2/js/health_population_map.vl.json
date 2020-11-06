@@ -1,3 +1,4 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": {
@@ -29,38 +30,36 @@
           "Cancer"
         ]
       }
+    },
+    {
+      "calculate": "datum.obese",
+      "as": "Obese_percentage"
     }
   ],
   "mark": {"type": "geoshape"},
-  "encoding": {
-    "color": {
-      "field": "bese",
-      "type": "quantitative",
-      "scale": {"type": "threshold", "domain": [0, 100]}
-    },
+  "encoding": {  
+    "color":{"field":"","type": "quantitative"},
     "tooltip": [
-      {"field": "properties.vic_lga__3", "type": "nominal", "title": "Country"},
-      {"field": "Region", "type": "nominal", "title": "Region"},
-      {"field": "Obese", "type": "quantitative", "title": "Obese"},
+      {"field": "properties.vic_lga__3", "type": "Nominal", "title": "Local government area"},
+      {"field": "Region", "type": "Nominal"},
+      {"field": "Obese_percentage", "type": "Quantitative"},
       {
         "field": "Current_smoker",
-        "type": "quantitative",
-        "title": "Current smoker"
+        "type": "quantitative"
       },
       {
         "field": "High_blood_pressure",
-        "type": "quantitative",
-        "title": "High blood pressure"
+        "type": "quantitative"
       },
       {
         "field": "Heart_disease",
-        "type": "quantitative",
-        "title": "Heart disease"
+        "type": "Quantitative"
       },
-      {"field": "Stroke", "type": "quantitative", "title": "Stroke"},
-      {"field": "Cancer", "type": "quantitative", "title": "Cancer"}
+      {"field": "Stroke", "type": "quantitative"},
+      {"field": "Cancer", "type": "quantitative"}
     ]
   },
   "background": "black",
   "config": {}
 }
+
