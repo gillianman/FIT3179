@@ -15,9 +15,15 @@
       "field": "Percentage",
       "title": "Percentage",
       "axis": {"grid": false}
+       
     },
     "x": {"field": "Year", "axis": {"title": ""}},
-    "color": {"field": "Year", "scale": {"range": ["#675193", "#ca8861"]}}
+    "color": {"field": "Year", "scale": {"range": ["#675193", "#ca8861"]}},
+    "tooltip": [
+          {"field": "Year", "type": "nominal"},
+          {"field": "Status", "type": "nominal"},
+          {"field": "Percentage", "type": "quantitative", "title": "Percentage"}
+        ]
   },
   "config": {}
 }
