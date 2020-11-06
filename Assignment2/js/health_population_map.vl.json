@@ -8,7 +8,7 @@
   "height": 500,
   "projection": {"type": "azimuthalEqualArea", "rotate": [-133, 28, 0]},
   "data": {
-    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/victoria_lgatopojson.json",
+    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment2/js/victoria_lgatopojson.json",
     "format": {"type": "topojson", "feature": "victoria_lga"}
   },
   "transform": [
@@ -16,7 +16,7 @@
       "lookup": "properties.vic_lga__3",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/health_population.csv"
+          "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment2/data/health_population.csv"
         },
         "key": "Local_government_area",
         "fields": [
