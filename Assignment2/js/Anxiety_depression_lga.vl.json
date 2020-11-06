@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "Proportion (%) of adult (18+ years) population, diagnosed with anxiety or depression, by local government area in Victoria",
+  "data": {
+    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment2/data/Anxiety_depression_lga.csv"
+  },
+  "hconcat": [
+    {
+      "mark": "bar",
+      "transform": [
+        {
+          "filter": {"selection": "brush"},
+          "calculate": "datum.sex == 2 ? 'Female' : 'Male'",
+          "as": "gender"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "Suburb",
+          "type": "nominal",
+          "axis": {"minExtent": 200, "title": null},
+          "sort": "-x"
+        },
+        "color": {
+          "field": "Gender",
+          "scale": {"range": ["#675193", "#ca8861"]}
+        },
+        "x": {
+          "aggregate": "sum",
+          "field": "Percentage",
+          "scale": {"domain": [0, 100]},
+          "axis": {"orient": "top"}
+        },
+        "tooltip": [
+          {"field": "Suburb", "type": "nominal"},
+          {"field": "Gender", "type": "nominal"},
+          {"field": "Percentage", "type": "quantitative", "title": "Percentage"}
+        ]
+      }
+    },
+    {
+      "height": 200,
+      "width": 50,
+      "selection": {"brush": {"type": "interval", "encodings": ["y"]}},
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "Suburb", "type": "nominal", "sort": "-x", "axis": null},
+        "x": {"aggregate": "sum", "field": "Percentage", "axis": null}
+      }
+    }
+  ],
+  "config": {}
+}
