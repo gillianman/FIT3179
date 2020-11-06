@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "The proportion of adult population, by time spent sitting on an average week day",
+  "data": {
+    "values": [
+      {"Activity": " 2 hours or less per day", "Time": 6.6},
+      {"Activity": "2 to < 4 hours per day", "Time": 27.1},
+      {"Activity": "4 to < 6 hours per day", "Time": 24.8},
+      {"Activity": "6 to 8 hours per day", "Time": 14.4},
+      {"Activity": "8 hours or more per day ", "Time": 22}
+    ]
+  },
+  "transform": [
+    {
+      "window": [{"op": "sum", "field": "Time", "as": "TotalTime"}],
+      "frame": [null, null]
+    },
+    {
+      "calculate": "datum.Time/datum.TotalTime * 100",
+      "as": "PercentOfpopulation"
+    }
+  ],
+  "height": {"step": 12},
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "PercentOfpopulation",
+      "type": "quantitative",
+      "title": "% of population"
+    },
+    "y": {"field": "Activity", "type": "nominal", "title": ""}
+  },
+  "config": {}
+}
