@@ -13,7 +13,7 @@
       "lookup": "properties.vic_lga__3",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/gillianman/FIT3179/Assignment3/health_population.csv"
+          "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/health_population.csv"
         },
         "key": "Local_government_area",
         "fields": [
@@ -35,13 +35,18 @@
       "type":"quantitative",
       "scale":{
         "type": "threshold",
-        "domain":[1,50,100]
-      
+        "domain":[0,100]
       }
     },
     "tooltip":[
       {"field":"properties.vic_lga__3", "type":"nominal","title":"Country"},
-      {"field":"Region","type":"nominal","title":"Region"}
+      {"field":"Region","type":"nominal","title":"Region"},
+      {"field":"Obese","type":"quantitative","title":"Obese"},
+      {"field":"Current_smoker","type":"quantitative","title":"Current smoker"},
+      {"field":"High_blood_pressure","type":"quantitative","title":"High blood pressure"},
+      {"field":"Heart_disease","type":"quantitative","title":"Heart disease"},
+      {"field":"Stroke","type":"quantitative","title":"Stroke"},
+      {"field":"Cancer","type":"quantitative","title":"Cancer"}
     ]},
   
   "background": "black"
