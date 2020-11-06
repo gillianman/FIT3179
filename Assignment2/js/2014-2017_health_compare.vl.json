@@ -4,7 +4,7 @@
   "height": 400,
   "title": "Change in population of different health status in 2014 and 2017 in Victoria region",
   "data": {
-    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment3/data/2014-2017_health_compare.csv"
+    "url": "https://raw.githubusercontent.com/gillianman/FIT3179/main/Assignment2/data/2014-2017_health_compare.csv"
   },
   "transform": [{"calculate": "datum == 2 ? '2014' : '2017'", "as": "year"}],
   "mark": "bar",
