@@ -115,8 +115,8 @@
         },
         "tooltip": [
           {"field": "Suburb", "type": "nominal"},
-          {"field": "Female", "type": "quantitative", "format": ","},
-          {"field": "Male", "type": "quantitative", "format": ","}
+          {"field": "Female percentage", "type": "quantitative", "format": ","},
+          {"field": "Male percentage", "type": "quantitative", "format": ","}
         ]
       }
     }
