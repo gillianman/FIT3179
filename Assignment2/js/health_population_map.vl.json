@@ -40,23 +40,27 @@
   "encoding": {  
     "color":{"field":"","type": "quantitative"},
     "tooltip": [
-      {"field": "properties.vic_lga__3", "type": "Nominal", "title": "Local government area"},
-      {"field": "Region", "type": "Nominal"},
-      {"field": "Obese_percentage", "type": "Quantitative"},
+      {"field": "properties.vic_lga__3", "type": "Nominal", "title": "Local government area","format": ","},
+      {"field": "Region", "type": "Nominal","format": ","},
+      {"field": "Obese_percentage", "type": "Quantitative","format": ","},
       {
         "field": "Current_smoker",
-        "type": "quantitative"
+        "type": "quantitative",
+        "format": ","
       },
       {
         "field": "High_blood_pressure",
-        "type": "quantitative"
+        "type": "quantitative",
+        "format": ","
       },
       {
         "field": "Heart_disease",
-        "type": "Quantitative"
+        "type": "Quantitative",
+        "format": ","
       },
-      {"field": "Stroke", "type": "quantitative"},
-      {"field": "Cancer", "type": "quantitative"}
+      {"field": "Stroke", "type": "quantitative","format": ","},
+      {"field": "Cancer", "type": "quantitative","format": ","}
+      
     ]
   },
   "background": "black",
